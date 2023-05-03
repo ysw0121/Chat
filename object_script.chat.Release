@@ -1,5 +1,7 @@
+release/answer.o
 release/chatrecord.o
 release/form.o
+release/like_and_comment.o
 release/login.o
 release/main.o
 release/moments.o
@@ -10,8 +12,10 @@ release/settings.o
 release/user.o
 release/widget.o
 release/qrc_back.o
+release/moc_answer.o
 release/moc_chatrecord.o
 release/moc_form.o
+release/moc_like_and_comment.o
 release/moc_login.o
 release/moc_moments.o
 release/moc_newfriend.o

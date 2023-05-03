@@ -35,6 +35,7 @@ public:
     QLabel *receiver;
     QListWidget *chatWindow;
     QListWidget *contactList;
+    QLabel *label_4;
 
     void setupUi(QDialog *User)
     {
@@ -154,6 +155,17 @@ public:
         font8.setWeight(75);
         contactList->setFont(font8);
         contactList->setProperty("showDropIndicator", QVariant(false));
+        label_4 = new QLabel(User);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(500, 490, 181, 21));
+        QFont font9;
+        font9.setFamily(QString::fromUtf8("Arial"));
+        font9.setPointSize(12);
+        font9.setBold(true);
+        font9.setWeight(75);
+        label_4->setFont(font9);
+        label_4->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);\n"
+"background-color: rgb(85, 255, 127);"));
         label->raise();
         setting->raise();
         moments->raise();
@@ -167,6 +179,7 @@ public:
         receiver->raise();
         chatWindow->raise();
         contactList->raise();
+        label_4->raise();
 
         retranslateUi(User);
 
@@ -186,6 +199,7 @@ public:
         send->setText(QApplication::translate("User", "\345\217\221\351\200\201", nullptr));
         label_3->setText(QString());
         receiver->setText(QString());
+        label_4->setText(QApplication::translate("User", "\346\217\220\347\244\272\357\274\232\345\217\214\345\207\273\351\200\211\344\270\255\345\210\227\350\241\250\345\245\275\345\217\213", nullptr));
     } // retranslateUi
 
 };

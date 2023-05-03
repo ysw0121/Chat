@@ -1,5 +1,7 @@
+debug/answer.o
 debug/chatrecord.o
 debug/form.o
+debug/like_and_comment.o
 debug/login.o
 debug/main.o
 debug/moments.o
@@ -10,8 +12,10 @@ debug/settings.o
 debug/user.o
 debug/widget.o
 debug/qrc_back.o
+debug/moc_answer.o
 debug/moc_chatrecord.o
 debug/moc_form.o
+debug/moc_like_and_comment.o
 debug/moc_login.o
 debug/moc_moments.o
 debug/moc_newfriend.o

@@ -51,7 +51,7 @@ public:
         font.setWeight(75);
         number_permit->setFont(font);
         number_permit->setCheckable(true);
-        number_permit->setChecked(true);
+        number_permit->setChecked(false);
         name_permit = new QCheckBox(Settings);
         name_permit->setObjectName(QString::fromUtf8("name_permit"));
         name_permit->setGeometry(QRect(290, 90, 71, 31));
@@ -93,7 +93,7 @@ public:
         no_certi->setObjectName(QString::fromUtf8("no_certi"));
         no_certi->setGeometry(QRect(190, 160, 121, 18));
         no_certi->setFont(font);
-        no_certi->setChecked(true);
+        no_certi->setChecked(false);
         no_certi->setAutoExclusive(true);
         question = new QCheckBox(Settings);
         question->setObjectName(QString::fromUtf8("question"));
