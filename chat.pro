@@ -9,8 +9,10 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    answer.cpp \
     chatrecord.cpp \
     form.cpp \
+    like_and_comment.cpp \
     login.cpp \
     main.cpp \
     moments.cpp \
@@ -22,8 +24,10 @@ SOURCES += \
     widget.cpp
 
 HEADERS += \
+    answer.h \
     chatrecord.h \
     form.h \
+    like_and_comment.h \
     login.h \
     moments.h \
     newfriend.h \
@@ -34,8 +38,10 @@ HEADERS += \
     widget.h
 
 FORMS += \
+    answer.ui \
     chatrecord.ui \
     form.ui \
+    like_and_comment.ui \
     login.ui \
     moments.ui \
     newfriend.ui \

@@ -18,6 +18,8 @@ public:
 private slots:
     void on_cancel_clicked();
 
+    void on_sure_clicked();
+
 private:
     Ui::question_edit *ui;
 };

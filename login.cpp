@@ -8,6 +8,7 @@
 #include"register.h"
 #include<QMessageBox>
 #include<QDebug>
+#include<QList>
 
 login::login(QWidget *parent) :
     QDialog(parent),
@@ -22,15 +23,25 @@ login::~login()
     delete ui;
 }
 
+struct moment{
+    int range;
+    QString sender;
+    QString text;
+    QList<QString>likes;
+    QList<QString>comments;//(格式直接做成name+内容)
+};
+extern QList<moment>Moment;
+
 struct USER{
     QString name;
     QString phone;
     QString password;
     int name_permit;//是否通过昵称添加
     int phone_permit;//是否手机号添加
-    int range;//朋友圈可见范围
     int verti_way;//加好友验证方式
-    int succeed;//判断登录状态
+    int succeed;//是否登录状态下（可能用不上）
+    QList<QString>contact;
+    QString question;
 };
 
 extern QList <USER> list;
@@ -54,12 +65,12 @@ void login::on_show_password_clicked(bool checked)
 void login::on_start_clicked()
 {
     int flag=0;
-    for(int i=0;i<list.size()-1;i++){
+    for(int i=0;i<list.size();i++){
         if(ui->account->text()==list[i].phone&&ui->password->text()==list[i].password)flag=1,succeed=list[i];
     }
     //temp state
     if(flag==1){
-        qDebug()<<succeed.name;
+        qDebug()<<succeed.name<<" "<<succeed.question;
         this->close();
         User *pic=new User;
         pic->show();

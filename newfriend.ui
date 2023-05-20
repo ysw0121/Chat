@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>424</width>
-    <height>325</height>
+    <width>580</width>
+    <height>444</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="return_2">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>270</y>
+     <x>480</x>
+     <y>400</y>
      <width>80</width>
      <height>31</height>
     </rect>
@@ -37,10 +37,10 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>-7</x>
-     <y>-10</y>
-     <width>441</width>
-     <height>341</height>
+     <x>0</x>
+     <y>0</y>
+     <width>581</width>
+     <height>451</height>
     </rect>
    </property>
    <property name="text">
@@ -50,12 +50,12 @@
     <pixmap resource="back.qrc">:/back/back3.jpg</pixmap>
    </property>
   </widget>
-  <widget class="QLineEdit" name="search">
+  <widget class="QLineEdit" name="searchLine">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>20</y>
-     <width>301</width>
+     <x>30</x>
+     <y>30</y>
+     <width>191</width>
      <height>31</height>
     </rect>
    </property>
@@ -71,21 +71,11 @@
     <string>加好友：输入昵称或手机号</string>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="textBrowser">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>60</y>
-     <width>301</width>
-     <height>201</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>13</x>
-     <y>70</y>
+     <x>310</x>
+     <y>30</y>
      <width>61</width>
      <height>21</height>
     </rect>
@@ -106,11 +96,169 @@ background-color: rgb(33, 185, 255);</string>
     <string>好友申请</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="go">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>30</y>
+     <width>41</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>搜索</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="result">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>140</y>
+     <width>221</width>
+     <height>241</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>120</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: rgb(33, 185, 255);</string>
+   </property>
+   <property name="text">
+    <string>搜索结果</string>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="applyList">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>51</y>
+     <width>251</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="name_accord">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>80</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 85, 127);</string>
+   </property>
+   <property name="text">
+    <string>按昵称搜索</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="phone_accord">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>80</y>
+     <width>111</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 85, 127);</string>
+   </property>
+   <property name="text">
+    <string>按电话号搜索</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>420</y>
+     <width>251</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(85, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>提示：双击选中列表选项查看详情</string>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>return_2</zorder>
-  <zorder>search</zorder>
-  <zorder>textBrowser</zorder>
+  <zorder>searchLine</zorder>
   <zorder>label_2</zorder>
+  <zorder>go</zorder>
+  <zorder>result</zorder>
+  <zorder>label_3</zorder>
+  <zorder>applyList</zorder>
+  <zorder>name_accord</zorder>
+  <zorder>phone_accord</zorder>
+  <zorder>label_4</zorder>
  </widget>
  <resources>
   <include location="back.qrc"/>

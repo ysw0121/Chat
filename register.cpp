@@ -16,6 +16,7 @@
 #include <QMessageBox>
 #include <QByteArray>
 #include <QMouseEvent>
+#include<QMap>
 #include<QFile>
 #include<QFileDialog>
 #include<QList>
@@ -36,19 +37,28 @@ Register::~Register()
     delete ui;
 }
 
+struct moment{
+    int range;
+    QString text;
+    QList<QString>likes;
+    QList<QString>comments;//(格式直接做成name+内容)
+};
+
 struct USER{
     QString name;
     QString phone;
     QString password;
     int name_permit;//是否通过昵称添加
     int phone_permit;//是否手机号添加
-    int range;//朋友圈可见范围
     int verti_way;//加好友验证方式
     int succeed;//是否登录状态下（可能用不上）
+    QList<QString>contact;
+
+    QString question;
 };
 
 extern QList <USER> list;
-
+extern QList<moment>Moment;
 extern USER succeed;//单独全局变量已登录的用户
 USER u;
 
@@ -147,9 +157,13 @@ void Register::on_nickname_textEdited(const QString &arg1)
          ui->nameEmpty->setStyleSheet("color: rgb(255, 78, 25);");
 
     }
-    else{
+    else if(name.indexOf(" ")==-1&&name.indexOf("-")==-1){
         ui->nameEmpty->setText("昵称符合");
          ui->nameEmpty->setStyleSheet("color: rgb(0, 255, 25);");
+    }
+    else {
+        ui->nameEmpty->setText("昵称不能含空格或 - 号!");
+         ui->nameEmpty->setStyleSheet("color: rgb(255, 78, 25);");
     }
 }
 
@@ -265,45 +279,38 @@ void Register::on_RegistButton_clicked()
                 out.setCodec("UTF-8");
                 out<<QString(ui->nickname->text())<<" "
                   <<QString(ui->phone->text())<<" "<<QString(ui->Password->text())<<" 1 1 1"<<endl;
-                file1.flush();
+                //file1.flush();
                 file1.close();
             }else{
                 qDebug()<<file1.errorString()<<endl;
             }
 
 
-            u.name=ui->nickname->text();u.phone=ui->phone->text();u.password=ui->Password->text();
+            u.name=ui->nickname->text(); u.phone=ui->phone->text(); u.password=ui->Password->text();
             u.verti_way=u.name_permit=u.phone_permit=1;
+            u.contact<<"12312345678"<<"22222222222";
+            list[1].contact<<u.phone;
+            list[2].contact<<u.phone;
             list<<u;
+            u.contact.clear();
 
             for(int i=0;i<list.size();i++)qDebug()<<list[i].name;
 
-            succeed=u;
+            succeed=list[list.size()-1];
 
             QFile file("contact.txt");
-            if(file.open(QIODevice::WriteOnly|QIODevice::Append)){
+            if(file.open(QIODevice::WriteOnly|QIODevice::Truncate)){
                 QTextStream out(&file);
                 out.setCodec("UTF-8");
-                out<<ui->phone->text()<<" "<<"12312345678 22222222222"<<endl;
-            }
-            file.flush();
-            file.close();
-
-            QFile file2("contact.txt");
-            QTextStream in(&file2);
-            QString head;
-            QStringList temp;
-            if(file2.open(QIODevice::ReadWrite|QIODevice::Append))
-            while(!file2.atEnd()){
-            head=in.readLine();
-            temp=head.split(" ");
-               if(temp[0]=="12312345678"||temp[0]=="22222222222"){
-                  in<<" "<<u.phone;
+                for(int i=0;i<list.size();i++){
+                    for(int j=0;j<list[i].contact.size();j++){
+                        out<<list[i].contact[j]<<" ";
+                    }
+                   out<<endl;
                 }
             }
-            file2.flush();
-           file2.close();
-
+            //file.flush();
+            file.close();
 
         QMessageBox::information(this,tr(""),tr("注册成功！"));
         this->close();

@@ -18,6 +18,16 @@ public:
 private slots:
     void on_return_2_clicked();
 
+    void on_go_clicked();
+
+    void on_name_accord_stateChanged(int arg1);
+
+    void on_phone_accord_stateChanged(int arg1);
+
+    void on_result_doubleClicked(const QModelIndex &index);
+
+    void on_applyList_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::newFriend *ui;
 };

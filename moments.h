@@ -18,6 +18,10 @@ public:
 private slots:
     void on_return_2_clicked();
 
+    void on_content_send_clicked();
+
+    void on_mainWind_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::moments *ui;
 };

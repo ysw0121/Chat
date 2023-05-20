@@ -18,6 +18,12 @@ public:
 private slots:
     void on_return_2_clicked();
 
+    void on_accor_friend_stateChanged(int arg1);
+
+    void on_accor_content_stateChanged(int arg1);
+
+    void on_search_clicked();
+
 private:
     Ui::chatRecord *ui;
 };

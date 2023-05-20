@@ -176,35 +176,6 @@ color: rgb(255, 170, 255);</string>
     <enum>QFrame::Plain</enum>
    </property>
   </widget>
-  <widget class="QListView" name="contactList">
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>60</y>
-     <width>161</width>
-     <height>421</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Box</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Plain</enum>
-   </property>
-   <property name="lineWidth">
-    <number>1</number>
-   </property>
-   <property name="midLineWidth">
-    <number>1</number>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
@@ -295,7 +266,7 @@ border-color: rgb(0, 255, 255);</string>
     <string/>
    </property>
   </widget>
-  <widget class="QListWidget" name="listWidget">
+  <widget class="QListWidget" name="chatWindow">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -315,6 +286,57 @@ border-color: rgb(0, 255, 255);</string>
    <property name="frameShadow">
     <enum>QFrame::Plain</enum>
    </property>
+   <property name="showDropIndicator" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="contactList">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>60</y>
+     <width>151</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="showDropIndicator" stdset="0">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>490</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(85, 255, 127);</string>
+   </property>
+   <property name="text">
+    <string>提示：双击选中列表好友</string>
+   </property>
   </widget>
   <zorder>label</zorder>
   <zorder>setting</zorder>
@@ -323,12 +345,13 @@ border-color: rgb(0, 255, 255);</string>
   <zorder>new_friends</zorder>
   <zorder>my_history</zorder>
   <zorder>textEdit</zorder>
-  <zorder>contactList</zorder>
   <zorder>label_2</zorder>
   <zorder>label_3</zorder>
   <zorder>send</zorder>
   <zorder>receiver</zorder>
-  <zorder>listWidget</zorder>
+  <zorder>chatWindow</zorder>
+  <zorder>contactList</zorder>
+  <zorder>label_4</zorder>
  </widget>
  <resources>
   <include location="back.qrc"/>

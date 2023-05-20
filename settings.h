@@ -26,8 +26,6 @@ private slots:
 
     void on_name_permit_clicked(bool checked);
 
-    void init();
-
     void on_confirm_clicked();
 
 private:
