@@ -3,22 +3,12 @@
 #include"settings.h"
 #include<QMessageBox>
 #include<QList>
-
+#include"user_info.h"
 
 
 
 extern QMap <QString,QString>corre;
-struct USER{
-    QString name;
-    QString phone;
-    QString password;
-    int name_permit;//是否通过昵称添加
-    int phone_permit;//是否手机号添加
-    int verti_way;//加好友验证方式，1为无需验证
-    int succeed;//是否登录状态下（可能用不上）
-    QList<QString>contact;
-    QString question;
-};
+
 extern QList <USER> list;
 
 extern USER succeed;//单独全局变量已登录的用户

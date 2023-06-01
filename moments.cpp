@@ -7,37 +7,13 @@
 #include<QDebug>
 #include<QList>
 #include"like_and_comment.h"
-
+#include"user_info.h"
 
 int curCNT=0;
 
-struct comment{
-    QString sender;
-    QString content;
-};
-
-struct moment{
-    QString range;
-    QString sender;
-    QString text;
-    QList<QString>likes;
-    QList<comment>comments;//(格式直接做成phone+内容)
-};
 extern QList<moment>Moment;//全部的
 QList<moment>cur;//当前用户的
 
-struct USER{
-    QString name;
-    QString phone;
-    QString password;
-    int name_permit;//是否通过昵称添加
-    int phone_permit;//是否手机号添加
-    int verti_way;//加好友验证方式
-    int succeed;//是否登录状态下（可能用不上）
-    QList<QString>contact;
-
-    QString question;
-};
 extern QList <USER> list;
 
 extern USER succeed;//单独全局变量已登录的用户

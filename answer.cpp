@@ -5,27 +5,11 @@
 #include<QMap>
 #include<QDebug>
 #include"newfriend.h"
+#include"user_info.h"
 
 
-struct application{
-    QString from;
-    QString to;//电话号表
-    QString accepted;//1成功，0失败，2申请中
-    QString answer;
-};
 extern QList<application>applyList;
 
-struct USER{
-    QString name;
-    QString phone;
-    QString password;
-    int name_permit;//是否通过昵称添加
-    int phone_permit;//是否手机号添加
-    int verti_way;//加好友验证方式,1 无需验证
-    int succeed;//是否登录状态下（可能用不上）
-    QList<QString>contact;
-    QString question;
-};
 extern QList <USER> list;
 
 extern USER succeed;//单独全局变量已登录的用户

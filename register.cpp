@@ -21,6 +21,7 @@
 #include<QFileDialog>
 #include<QList>
 #include<QFont>
+#include"user_info.h"
 
 Register::Register(QWidget *parent) :
     QDialog(parent),verti(QString()),
@@ -37,25 +38,6 @@ Register::~Register()
     delete ui;
 }
 
-struct moment{
-    int range;
-    QString text;
-    QList<QString>likes;
-    QList<QString>comments;//(格式直接做成name+内容)
-};
-
-struct USER{
-    QString name;
-    QString phone;
-    QString password;
-    int name_permit;//是否通过昵称添加
-    int phone_permit;//是否手机号添加
-    int verti_way;//加好友验证方式
-    int succeed;//是否登录状态下（可能用不上）
-    QList<QString>contact;
-
-    QString question;
-};
 
 extern QList <USER> list;
 extern QList<moment>Moment;

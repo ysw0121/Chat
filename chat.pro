@@ -35,6 +35,7 @@ HEADERS += \
     register.h \
     settings.h \
     user.h \
+    user_info.h \
     widget.h
 
 FORMS += \

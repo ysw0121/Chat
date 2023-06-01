@@ -5,57 +5,14 @@
 #include<QFile>
 #include"login.h"
 #include<QList>
+#include"user_info.h"
 
-struct comment{
-    QString sender;
-    QString content;
-};
 
-struct moment{
-    QString range;
-    QString sender;
-    QString text;
-    QList<QString>likes;
-    QList<comment>comments;//(格式直接做成phone+内容)
-};
+QList<application>applyList;
+QList <record>Record;
+QList<USER>list;
 QList<moment>Moment;
 
-struct USER{
-    QString name;
-    QString phone;
-    QString password;
-    int name_permit;//是否通过昵称添加
-    int phone_permit;//是否手机号添加
-    int verti_way;//加好友验证方式
-    int succeed;//是否登录状态下（可能用不上）
-    QList<QString>contact;
-    QString question;
-};
-QList<USER>list;
-
-struct record{
-    QString from;
-    QString to;
-    QString content;
-};
-QList <record>Record;
-
-
-struct application{
-    QString from;
-    QString to;
-    QString accepted;//1成功，0失败，2申请中
-    QString answer;
-};
-QList<application>applyList;
-
-//struct question{
-//    QString setter;
-//    QString content;
-//};
-//extern QList<question>questionList;
-
-//extern USER succeed;
 
 int main(int argc, char *argv[])
 {
