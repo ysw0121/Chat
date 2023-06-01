@@ -54,7 +54,7 @@ void login::on_start_clicked()
     if(flag==1){
         qDebug()<<succeed.name<<" "<<succeed.question;
         this->close();
-        User *pic=new User;
+        User *pic=new User();
         pic->show();
     }
    else{

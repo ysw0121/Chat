@@ -338,6 +338,32 @@ background-color: rgb(85, 255, 127);</string>
     <string>提示：双击选中列表好友</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="play">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>410</y>
+     <width>80</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 0, 0);
+background-color: rgb(255, 170, 0);</string>
+   </property>
+   <property name="text">
+    <string>知识竞赛
+小游戏</string>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>setting</zorder>
   <zorder>moments</zorder>
@@ -352,6 +378,7 @@ background-color: rgb(85, 255, 127);</string>
   <zorder>chatWindow</zorder>
   <zorder>contactList</zorder>
   <zorder>label_4</zorder>
+  <zorder>play</zorder>
  </widget>
  <resources>
   <include location="back.qrc"/>

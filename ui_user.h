@@ -36,6 +36,7 @@ public:
     QListWidget *chatWindow;
     QListWidget *contactList;
     QLabel *label_4;
+    QPushButton *play;
 
     void setupUi(QDialog *User)
     {
@@ -166,6 +167,12 @@ public:
         label_4->setFont(font9);
         label_4->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);\n"
 "background-color: rgb(85, 255, 127);"));
+        play = new QPushButton(User);
+        play->setObjectName(QString::fromUtf8("play"));
+        play->setGeometry(QRect(20, 410, 80, 45));
+        play->setFont(font9);
+        play->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);\n"
+"background-color: rgb(255, 170, 0);"));
         label->raise();
         setting->raise();
         moments->raise();
@@ -180,6 +187,7 @@ public:
         chatWindow->raise();
         contactList->raise();
         label_4->raise();
+        play->raise();
 
         retranslateUi(User);
 
@@ -200,6 +208,8 @@ public:
         label_3->setText(QString());
         receiver->setText(QString());
         label_4->setText(QApplication::translate("User", "\346\217\220\347\244\272\357\274\232\345\217\214\345\207\273\351\200\211\344\270\255\345\210\227\350\241\250\345\245\275\345\217\213", nullptr));
+        play->setText(QApplication::translate("User", "\347\237\245\350\257\206\347\253\236\350\265\233\n"
+"\345\260\217\346\270\270\346\210\217", nullptr));
     } // retranslateUi
 
 };

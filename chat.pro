@@ -11,13 +11,20 @@ CONFIG += c++11
 SOURCES += \
     answer.cpp \
     chatrecord.cpp \
+    exercise.cpp \
     form.cpp \
+    formalquiz.cpp \
+    game_login.cpp \
+    game_register.cpp \
     like_and_comment.cpp \
     login.cpp \
     main.cpp \
+    mainwindow.cpp \
+    model_choose.cpp \
     moments.cpp \
     newfriend.cpp \
     question_edit.cpp \
+    rank.cpp \
     register.cpp \
     settings.cpp \
     user.cpp \
@@ -26,12 +33,19 @@ SOURCES += \
 HEADERS += \
     answer.h \
     chatrecord.h \
+    exercise.h \
     form.h \
+    formalquiz.h \
+    game_login.h \
+    game_register.h \
     like_and_comment.h \
     login.h \
+    mainwindow.h \
+    model_choose.h \
     moments.h \
     newfriend.h \
     question_edit.h \
+    rank.h \
     register.h \
     settings.h \
     user.h \
@@ -41,12 +55,19 @@ HEADERS += \
 FORMS += \
     answer.ui \
     chatrecord.ui \
+    exercise.ui \
     form.ui \
+    formalquiz.ui \
+    game_login.ui \
+    game_register.ui \
     like_and_comment.ui \
     login.ui \
+    mainwindow.ui \
+    model_choose.ui \
     moments.ui \
     newfriend.ui \
     question_edit.ui \
+    rank.ui \
     register.ui \
     settings.ui \
     user.ui \
@@ -58,4 +79,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    Resource.qrc \
     back.qrc

@@ -1,6 +1,7 @@
 #ifndef USER_INFO_H
 #define USER_INFO_H
-
+#include<QChar>
+#include<QString>
 
 struct comment{
     QString sender;
@@ -39,5 +40,19 @@ struct application{
     QString answer;
 };
 
+struct user{// 用于小游戏的虚拟用户，不与聊天用户相关
+    QString name;
+    QString password;
+    int times;//比赛次数，0起始，3终止，参与排名的不为0
+    int correct;// num of correct ones
+    double time;//用时
+
+};
+struct question{
+    //int seqnum;
+    QString quest;
+    QChar answer;
+    QString option;
+};
 
 #endif // USER_INFO_H

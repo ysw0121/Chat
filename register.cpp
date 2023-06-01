@@ -278,7 +278,7 @@ void Register::on_RegistButton_clicked()
 
             for(int i=0;i<list.size();i++)qDebug()<<list[i].name;
 
-            succeed=list[list.size()-1];
+            //succeed=list[list.size()-1];
 
             QFile file("contact.txt");
             if(file.open(QIODevice::WriteOnly|QIODevice::Truncate)){
@@ -296,7 +296,7 @@ void Register::on_RegistButton_clicked()
 
         QMessageBox::information(this,tr(""),tr("注册成功！"));
         this->close();
-        User *pic=new User;
+        login *pic=new login;
         pic->show();
     }
 

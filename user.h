@@ -31,6 +31,9 @@ private slots:
 
     void on_send_clicked();
 
+
+    void on_play_clicked();
+
 private:
     Ui::User *ui;
 };

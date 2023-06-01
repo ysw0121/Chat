@@ -15,6 +15,7 @@
 #include<QStringList>
 #include<QDateTime>
 #include<QMessageBox>
+#include"mainwindow.h"
 #include"user_info.h"
 
 extern QList<moment>Moment;
@@ -36,7 +37,6 @@ User::User(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("欢迎你，"+succeed.name);
-
     for(int i=0;i<list.size();i++){
         corre[list[i].phone]=list[i].name;
         qDebug()<<corre[list[i].phone];
@@ -171,5 +171,16 @@ void User::on_send_clicked()//       现在不允许聊天内容换行！！！�
         QMessageBox::critical(this,tr("警告"),tr("请选择你要发送的人"));return;
     }
     else if(mess=="")QMessageBox::critical(this,tr("警告"),tr("消息不能为空！"));
+}
+
+
+
+
+
+void User::on_play_clicked()
+{
+    this->close();
+    MainWindow *pic=new MainWindow();
+    pic->show();
 }
 
